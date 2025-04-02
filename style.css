@@ -4,12 +4,12 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 header {
     background-color: #1e1e1e;
     padding: 20px;
-    text-align: center;
 }
 
 header h1 {
@@ -47,15 +47,35 @@ nav ul li a:hover {
     color: #1e1e1e;
 }
 
+/* Evidenziare Il Menu */
+nav ul li a.special-button {
+    background-color: #f1c40f; /* Colore di sfondo evidenziato */
+    color: #1e1e1e; /* Colore del testo */
+    font-size: 20px; /* Dimensione del testo maggiore */
+    font-weight: bold; /* Testo in grassetto */
+    padding: 12px 20px; /* Maggiore spazio attorno al testo */
+    border-radius: 8px; /* Angoli arrotondati */
+}
+
+nav ul li a.special-button:hover {
+    background-color: #e0a800; /* Colore di sfondo al passaggio del mouse */
+    color: #1e1e1e; /* Colore del testo */
+    transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunta di ombra per l'effetto hover */
+}
+
 .container {
     padding: 20px;
     max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
 }
 
-h2 {
-    text-align: center;
+h2, h3 {
     color: #f1c40f;
+}
+
+h3 {
+    margin-bottom: 10px;
 }
 
 .menu-section {
@@ -66,7 +86,6 @@ h2 {
     color: #f1c40f;
     font-size: 24px;
     margin-bottom: 15px;
-    text-align: center;
 }
 
 .menu-item {
@@ -78,7 +97,6 @@ h2 {
     justify-content: space-between;
     align-items: center;
     transition: transform 0.3s ease;
-    text-align: center; /* Centra il testo */
 }
 
 .menu-item:hover {
@@ -112,8 +130,56 @@ button:hover {
     background-color: #e0a800;
 }
 
-#contact {
+/* Galleria */
+#gallery {
+    margin-top: 30px;
+}
+
+#gallery h2 {
     text-align: center;
+    font-size: 28px;
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spazio tra le immagini */
+    flex-wrap: wrap; /* Permette che le immagini vadano a capo se necessario */
+    margin-top: 20px;
+}
+
+.gallery-img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Mantiene il focus sulle immagini */
+}
+
+/* Link "Scopri il nostro menu" più interattivo */
+#menuButton {
+    background-color: #f1c40f;
+    color: #1e1e1e;
+    padding: 15px 25px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#menuButton:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sezione contatti */
+#contact {
     margin-top: 40px;
 }
 
