@@ -56,3 +56,43 @@ function toggleSubMenu(subMenuId) {
         button.textContent = "Mostra opzioni";
     }
 }
+
+// Aggiungi la classe "active" al menu quando la sezione è visibile
+window.addEventListener('scroll', function() {
+    var sections = document.querySelectorAll('section');
+    var links = document.querySelectorAll('.menu-link');
+    
+    sections.forEach(function(section, index) {
+        var rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+            // Rimuovi "active" da tutti i link
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            // Aggiungi "active" al link corrispondente
+            links[index].classList.add('active');
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    window.addEventListener('scroll', function () {
+        let currentSection = "";
+
+        document.querySelectorAll("section").forEach(function (section) {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 50) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        menuLinks.forEach(function (link) {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection)) {
+                link.classList.add("active");
+            }
+        });
+    });
+});
