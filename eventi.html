@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventi - Nero Caffè</title>
     <link rel="stylesheet" href="stile.css">
-    <script src="eventi.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <h1>Nero Caffè - Eventi</h1>
-        <nav>
+        <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav id="side-nav" class="side-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Il Menu</a></li>
-                <li><a href="eventi.html" class="special-button">Eventi</a></li>
                 <li><a href="#contact">Contatti</a></li>
+                <li><a href="menu.html" class="menu-link special-button">Il Menu</a></li>
             </ul>
         </nav>
     </header>
