@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nero Caffè - Il tuo bar di fiducia</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stile.css">
     <script src="script.js" defer></script>
     <meta name="description" content="Nero Caffè - Il miglior bar di Milano. Colazioni, aperitivi e caffè di qualità. Scopri il nostro menù online!">
     <meta name="keywords" content="bar Milano, miglior caffè, colazioni, aperitivi, Nero Caffè">
@@ -13,7 +13,12 @@
 <body>
     <header>
         <h1>Nero Caffè</h1>
-        <nav>
+        <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav id="side-nav" class="side-nav">
             <ul>
                 <li><a href="#about" class="menu-link">Chi Siamo</a></li>
                 <li><a href="#gallery" class="menu-link">Galleria</a></li>
@@ -29,7 +34,7 @@
         <h2>Benvenuti da Nero Caffè</h2>
         <p>Il luogo perfetto per iniziare la tua giornata con il miglior caffè della città.</p>
         <p>Ti aspettiamo per colazioni, aperitivi e tanto altro.</p>
-        <a href="menu.html" id="menuButton" class="button">Scopri il nostro menu</a>
+        <a href="menu.html" id="menuButton" class=">button">Scopri il nostro menu</a>
     </div>
 
     <section id="about">

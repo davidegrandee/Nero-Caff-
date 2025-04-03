@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Nero Caffè</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stile.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,6 +14,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html" class="special-button">Il Menu</a></li>
+                <li><a href="eventi.html">Eventi</a></li>
                 <li><a href="#contact">Contatti</a></li>
             </ul>
         </nav>
@@ -22,75 +24,50 @@
         <h2>Benvenuti nel nostro Menu!</h2>
         <p>Esplora le nostre delizie, dalle colazioni ai dolci più golosi. Siamo pronti ad accoglierti con un caffè perfetto.</p>
 
-        <!-- Caffè -->
         <div class="menu-section">
-            <h3>Caffè</h3>
-            <div class="menu-item">
-                <h4>Espresso</h4>
-                <p>1.50€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Cappuccino</h4>
-                <p>2.00€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Macchiato</h4>
-                <p>2.20€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Americano</h4>
-                <p>1.80€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Caffè corretto</h4>
-                <p>2.50€</p>
+            <h3>Caffè <span class="arrow">▼</span></h3>
+            <div class="submenu hidden">
+                <div class="menu-item">
+                    <h4>Caffè Espresso</h4>
+                    <p>Espresso classico italiano</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Caffè Macchiato</h4>
+                    <p>Macchiato con latte schiumato</p>
+                </div>
             </div>
         </div>
+        
 
-        <!-- Dolci -->
-        <div class="menu-section">
-            <h3>Dolci</h3>
-            <div class="menu-item">
-                <h4>Cornetto alla crema</h4>
-                <p>1.50€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Ciambella al cioccolato</h4>
-                <p>2.00€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Gelato artigianale</h4>
-                <p>2.50€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Torta alla frutta</h4>
-                <p>2.20€</p>
-            </div>
+<!-- Dolci -->
+<div class="menu-section">
+    <h3>Dolci <span class="arrow">▼</span></h3>
+    <div class="submenu">
+        <div class="menu-item">
+            <h4>Cornetto alla crema</h4>
+            <p>1.50€</p>
         </div>
-
-        <!-- Aperitivi -->
-        <div class="menu-section">
-            <h3>Aperitivi</h3>
-            <div class="menu-item">
-                <h4>Spritz</h4>
-                <p>4.50€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Aperol Spritz</h4>
-                <p>4.70€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Negroni</h4>
-                <p>5.00€</p>
-            </div>
-            <div class="menu-item">
-                <h4>Campari Soda</h4>
-                <p>3.50€</p>
-            </div>
+        <div class="menu-item">
+            <h4>Ciambella al cioccolato</h4>
+            <p>2.00€</p>
         </div>
-
-        <button class="button" onclick="window.location.href='index.html';">Torna alla Home</button>
     </div>
+</div>
+
+<!-- Aperitivi -->
+<div class="menu-section">
+    <h3>Aperitivi <span class="arrow">▼</span></h3>
+    <div class="submenu">
+        <div class="menu-item">
+            <h4>Spritz</h4>
+            <p>4.50€</p>
+        </div>
+        <div class="menu-item">
+            <h4>Aperol Spritz</h4>
+            <p>4.70€</p>
+        </div>
+    </div>
+</div>
 
     <section id="contact">
         <h2>Contatti</h2>
