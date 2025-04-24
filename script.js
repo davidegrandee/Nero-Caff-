@@ -1,94 +1,58 @@
-// Funzione per mostrare e nascondere il menu
-function showMenu() {
-    var menu = document.getElementById("menu");
-    var button = document.querySelector(".button");
-    
-    if (menu.classList.contains("hidden")) {
-        // Mostra il menu
-        menu.classList.remove("hidden");
-        menu.style.opacity = "0"; // Inizia l'animazione di fade-in
-        setTimeout(() => {
-            menu.style.opacity = "1"; // Animazione completa
-        }, 100);
-        button.textContent = "Nascondi il menu"; // Cambia il testo del bottone
-    } else {
-        // Nascondi il menu
-        menu.style.opacity = "0"; // Inizia l'animazione di fade-out
-        setTimeout(() => {
-            menu.classList.add("hidden"); // Nasconde il menu dopo che l'animazione è finita
-        }, 300);
-        button.textContent = "Scopri il nostro menu"; // Cambia il testo del bottone
-    }
-}
-
-// Gestione degli eventi di hover per i singoli elementi del menu
 document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll("#menu li");
-    items.forEach(item => {
+    // Apri/chiudi il menu laterale da destra
+    const menuIcon = document.querySelector('.menu-icon');
+    const sideNav = document.querySelector('.side-nav');
+    const body = document.querySelector('body');
+
+    // Aggiungi il listener per il menu laterale
+    menuIcon.addEventListener('click', () => {
+        sideNav.classList.toggle('open-right'); // Aggiunge o rimuove la classe per aprire/chiudere il menu
+        body.classList.toggle('menu-open'); // Blocca lo scroll quando il menu è aperto
+    });
+
+    // Gestione hover sugli elementi del menu laterale
+    const menuItems = document.querySelectorAll(".side-nav ul li a");
+    menuItems.forEach(item => {
         item.addEventListener("mouseover", () => {
-            item.style.color = "gold"; // Cambia il colore del testo su hover
-            item.style.transform = "scale(1.05)"; // Aggiunge un effetto di ingrandimento
+            item.style.color = "gold";
+            item.style.transform = "scale(1.05)";
         });
         item.addEventListener("mouseout", () => {
-            item.style.color = "white"; // Ripristina il colore del testo
-            item.style.transform = "scale(1)"; // Rimuove l'effetto di ingrandimento
+            item.style.color = "#f1c40f";
+            item.style.transform = "scale(1)";
         });
     });
-});
 
-// Funzione per aggiungere un altro menu dinamico
-function toggleSubMenu(subMenuId) {
-    var subMenu = document.getElementById(subMenuId);
-    var button = subMenu.previousElementSibling; // Trova il bottone correlato
+    // Gestione clic sui sottomenu
+    document.querySelectorAll(".menu-section h3").forEach(header => {
+        header.addEventListener("click", () => {
+            const submenu = header.nextElementSibling;
+            const arrow = header.querySelector(".arrow");
 
-    if (subMenu.classList.contains("hidden")) {
-        subMenu.classList.remove("hidden");
-        subMenu.style.opacity = "0";
-        setTimeout(() => {
-            subMenu.style.opacity = "1";
-        }, 100);
-        button.textContent = "Nascondi opzioni";
-    } else {
-        subMenu.style.opacity = "0";
-        setTimeout(() => {
-            subMenu.classList.add("hidden");
-        }, 300);
-        button.textContent = "Mostra opzioni";
-    }
-}
-
-// Aggiungi la classe "active" al menu quando la sezione è visibile
-window.addEventListener('scroll', function() {
-    var sections = document.querySelectorAll('section');
-    var links = document.querySelectorAll('.menu-link');
-    
-    sections.forEach(function(section, index) {
-        var rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
-            // Rimuovi "active" da tutti i link
-            links.forEach(function(link) {
-                link.classList.remove('active');
-            });
-            // Aggiungi "active" al link corrispondente
-            links[index].classList.add('active');
-        }
+            if (submenu.classList.contains("open")) {
+                submenu.classList.remove("open");
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                submenu.classList.add("open");
+                arrow.style.transform = "rotate(180deg)";
+            }
+        });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+    // Evidenziazione sezione attiva durante lo scroll
     const menuLinks = document.querySelectorAll('.menu-link');
 
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', () => {
         let currentSection = "";
 
-        document.querySelectorAll("section").forEach(function (section) {
+        document.querySelectorAll("section").forEach(section => {
             const sectionTop = section.offsetTop;
             if (pageYOffset >= sectionTop - 50) {
                 currentSection = section.getAttribute("id");
             }
         });
 
-        menuLinks.forEach(function (link) {
+        menuLinks.forEach(link => {
             link.classList.remove("active");
             if (link.getAttribute("href").includes(currentSection)) {
                 link.classList.add("active");
